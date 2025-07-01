@@ -1,0 +1,22 @@
+def count_char_frequencies(text):
+    """
+    Count character frequencies in a string.
+    
+    Parameters:
+    text (str): The input string
+    
+    Returns:
+    dict: A dictionary with characters as keys and frequencies as values
+    """
+    freq = {}
+    for char in text:
+        if char != ' ':  # Skip spaces if needed
+            freq[char] = freq.get(char, 0) + 1
+    return freq
+
+# Example usage:
+text = "data structures and algorithms"
+frequencies = count_char_frequencies(text)
+print(frequencies)
+# Output will show each character and its count, for example:
+# {'d': 2, 'a': 5, 't': 3, 's': 2, 'r': 3, 'u': 2, 'c': 1, 'e': 1, 'n': 1, 'l': 1, 'g': 1, 'o': 1, 'i': 1, 'h': 1, 'm': 1}

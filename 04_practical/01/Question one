@@ -1,0 +1,25 @@
+def rotate_list(lst, k=1, reverse=False):
+    """
+    Rotate or reverse a list.
+    
+    Parameters:
+    lst (list): The list to rotate/reverse
+    k (int): Number of rotations (default: 1)
+    reverse (bool): If True, reverses the list (default: False)
+    
+    Returns:
+    list: The rotated/reversed list
+    """
+    if reverse:
+        return lst[::-1]
+    
+    if not lst:
+        return lst
+    
+    k = k % len(lst)  # Handle cases where k > len(lst)
+    return lst[k:] + lst[:k]
+
+# Example usage:
+my_list = [1, 2, 3, 4, 5]
+print(rotate_list(my_list, 2))        # Output: [3, 4, 5, 1, 2]
+print(rotate_list(my_list, reverse=True))  # Output: [5, 4, 3, 2, 1]

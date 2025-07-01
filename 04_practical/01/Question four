@@ -1,0 +1,17 @@
+def sum_up_to(n, accumulator=0):
+    """
+    Sum all numbers up to n using tail recursion.
+    
+    Parameters:
+    n (int): The upper limit
+    accumulator (int): The running total (used for recursion)
+    
+    Returns:
+    int: The sum of numbers from 0 to n
+    """
+    if n == 0:
+        return accumulator
+    return sum_up_to(n - 1, accumulator + n)
+
+# Example usage:
+print(sum_up_to(5))  # Output: 15 (1+2+3+4+5)
